@@ -86,7 +86,7 @@ else
     };
 
 /// The microzig default panic handler. Will disable interrupts and loop endlessly.
-pub fn microzig_panic(message: []const u8, _: ?*std.builtin.StackTrace, _: ?usize) noreturn {
+pub fn microzig_panic(message: []const u8, _: ?*std.builtin.StackTrace) noreturn {
 
     // utilize logging functions
     std.log.err("microzig PANIC: {s}", .{message});
