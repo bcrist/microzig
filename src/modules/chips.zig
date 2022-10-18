@@ -50,6 +50,16 @@ pub const gd32vf103x8 = Chip{
     },
 };
 
+pub const stm32g030x6 = Chip{
+    .name = "STM32G030x6",
+    .path = root_path ++ "chips/stm32g030/stm32g030.zig",
+    .cpu = cpus.cortex_m0plus,
+    .memory_regions = &.{
+        MemoryRegion{ .offset = 0x08000000, .length = 64 * 1024, .kind = .flash },
+        MemoryRegion{ .offset = 0x20000000, .length = 20 * 1024, .kind = .ram },
+    },
+}
+
 pub const stm32f103x8 = Chip{
     .name = "STM32F103x8",
     .path = root_path ++ "chips/stm32f103/stm32f103.zig",
